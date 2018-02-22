@@ -33,6 +33,16 @@ module.exports = {
     // PropTypes validation does improve readability and understandability of
     // React components, but authoring and maintaining them everywhere is
     // unrealistic.
-    'react/prop-types': 0
+    'react/prop-types': 0,
+    // By default jsx-a11y exptects form labels to wrap form elements 
+    // and have an htmlFor props with an id. Because we are not wrapping 
+    // the elements we only require the id here.
+    "jsx-a11y/label-has-for": [ 2, {
+      "components": [ "Label" ],
+      "required": {
+          "every": ["id" ]
+      },
+      "allowChildren": false
+  }]
   }
 }
